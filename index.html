@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>פיצול אנשי קשר</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>פיצול אנשי קשר</h1>
+      <p class="lead">
+        גררו קובץ אנשי קשר (‎.vcf‎). כל מספר טלפון יהפוך לאיש קשר נפרד בשם
+        <b>שם-אבא</b>, <b>שם-אמא</b>, <b>שם-אבא\אמא</b> או <b>שם-בית</b>.
+        תיוג שהוסק ולא ידוע בוודאות מסומן ב-<b>?</b>.
+      </p>
+
+      <label id="drop" class="drop" tabindex="0">
+        <input id="file" type="file" accept=".vcf,text/vcard,text/x-vcard" hidden />
+        <span class="drop-title">גררו לכאן קובץ ‎.vcf‎</span>
+        <span class="drop-sub">או לחצו לבחירת קובץ</span>
+      </label>
+
+      <p id="error" class="error" role="alert" hidden></p>
+
+      <section id="result" hidden>
+        <div class="summary">
+          <p id="summary"></p>
+          <button id="download" type="button">הורדת הקובץ המסודר</button>
+        </div>
+        <table>
+          <thead><tr><th>שם</th><th>טלפון</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
